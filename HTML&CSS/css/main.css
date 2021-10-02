@@ -189,19 +189,27 @@ textarea {
   padding: 10px;
 }
 
-.form-long{
-    height: 150px;
+.form-long {
+  height: 150px;
 }
 
-.yellow-button{
-    padding: 10px;
-    padding-left: 30px;
-    padding-right: 30px;
-    display: block;
-    margin-left: auto;
-    float: right;
-    color: white;
-    background-color: orange;
-    border: none;
-    border-radius: 5px;
+.yellow-button {
+  padding: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  display: block;
+  margin-left: auto;
+  float: right;
+  color: white;
+  background-color: orange;
+  border: none;
+  border-radius: 5px;
+}
+
+td, th {
+  border: 1px solid black;
+}
+
+table {
+    border-collapse: collapse;
 }
