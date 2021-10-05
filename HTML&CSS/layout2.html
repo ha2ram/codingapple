@@ -5,11 +5,20 @@
     <meta charset="UTF-8">
     <title>Layout2</title>
     <link href="css/main.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="fontawesome/css/all.min.css" rel="stylesheet">
 </head>
 
 <body style="margin: 0px;">
+    <nav class="nav-container">
+        <div class="nav-item">ShooShop</div>
+        <div style="flex-grow: 1;"></div>
+        <div class="nav-item">Products</div>
+        <div class="nav-item">Services</div>
+    </nav>
+
     <div class="main-background">
-        <h4 class="main-title">Buy Our Shoes!</h4>
+        <h4 class="main-title">Buy Our Shoes! Now On Sale</h4>
         <p class="main-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, nostrum dolores! Nobis
             et aperiam corrupti sed amet aliquam soluta, sint libero dicta animi a fuga aut, in esse consequatur quis.
         </p>
@@ -31,6 +40,56 @@
             delectus fuga, nihil velit necessitatibus, magni minus hic laborum? Minima sed consectetur rerum vitae
             nihil.</p>
     </div>
+
+    <div class="product-container">
+        <div>
+            <i class="fas fa-shopping-cart fa-3x"></i>
+            <h4>Fast Shipping</h4>
+            <p>We ship faster than other shops</p>
+        </div>
+        <div>
+            <i class="fas fa-tools fa-3x"></i>
+            <h4>Good Service</h4>
+            <p>Expect a lifelong service</p>
+        </div>
+        <div>
+            <i class="fas fa-ticket-alt fa-3x"></i>
+            <h4>Free Coupons</h4>
+            <p>With new welcome gifts</p>
+        </div>
+        <div>
+            <i class="fas fa-shoe-prints fa-3x"></i>
+            <h4>New Products</h4>
+            <p>See monthly new products</p>
+        </div>
+        <div style="float: none; clear: both;"></div>
+    </div>
+
+    <div class="shop-bg">
+        <div class="shop-container">
+            <div class="shop-item">
+                <div style="position: relative">
+                    <div class="overlay"></div>
+                    <img src="img/product1.jpg">
+                </div>
+            </div>
+            <div class="shop-item">
+                <div style="position: relative">
+                    <div class="overlay-wrap">
+                        <div class="overlay-black"><span style="color: white; margin: 20px; display: inline-block; font-size: 30px;">$60<br><span style="font-size: 15px;">인기상품</span></span></div>
+                    </div>
+                    <img src="img/product2.jpg">
+                </div>
+            </div>
+            <div class="shop-item">
+                <div style="position: relative">
+                    <div class="overlay"></div>
+                    <img src="img/product3.jpg">
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="form-background">
         <div class="form-white">
             <form>
