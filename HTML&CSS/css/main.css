@@ -167,6 +167,7 @@ span {
   right: 0;
   margin: auto;
   width: 150px;
+  cursor: pointer;
 }
 
 .explain-box {

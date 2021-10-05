@@ -1,0 +1,188 @@
+body {
+  margin: 0;
+  font-family: 'nanumsquare';
+}
+div {
+  box-sizing: border-box;
+}
+h1 {
+  font-size: 30px;
+}
+h4 {
+  font-size: 22px;
+}
+h5{
+  font-size: 20px;
+}
+
+.main-background {
+  background-image: linear-gradient(to bottom, #499add, #4e61ce);
+  height: 550px;
+  padding: 20px;
+  color: white;
+  position: relative;
+}
+.main-container {
+  max-width: 1200px;
+  margin: auto;
+}
+.main-text {
+  position: absolute;
+  left: 30px;
+  /* float: left; */
+  margin-top: 50px;
+}
+.main-iphone {
+  width: 400px;
+  /* float: right;
+  margin-top: 95px; */
+  position: absolute;
+  bottom: 0px;
+  right: 30px;
+}
+.btn {
+  padding: 15px 20px;
+  font-size: 16px;
+  font-family: "nanumsquare";
+  font-weight: 600;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.btn-black {
+  background-color: #444;
+  color: white;
+}
+.btn-black:hover {
+  background-color: dimgray;
+}
+.btn-black:active {
+  background-color: lightskyblue;
+}
+
+.main-middle {
+  padding-top: 30px;
+  padding-bottom: 50px;
+  text-align: center;
+}
+
+.service {
+  background-color: #4e61ce;
+  width: 100%;
+  color: white;
+  text-align: center;
+  padding: 60px 30px 50px 30px;
+}
+.service-items {
+  display: flex;
+}
+.service-items i {
+  background: white;
+  color: #4e61ce;
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  box-sizing: border-box;
+  padding-top: 16px;
+}
+.service-items div {
+  width: 25%;
+}
+.service h5 {
+  margin-bottom: 0px;
+}
+
+.portfolio {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  text-align: center;
+}
+.portfolio-container {
+  text-align: left;
+  max-width: 1200px;
+  margin: auto;
+}
+.portfolio-item {
+  float: left;
+  width: 50%;
+  height: 350px;
+  background-size: cover;
+  position: relative;
+}
+.item1 {
+  background-image: url(../img/portfolio-1.jpg);
+}
+.item2 {
+  background-image: url(../img/portfolio-2.jpg);
+}
+.item3 {
+  background-image: url(../img/portfolio-3.jpg);
+}
+.item4 {
+  background-image: url(../img/portfolio-4.jpg);
+}
+.portfolio-text {
+  color: white;
+  padding: 50px;
+}
+.white-box {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  border: 0px solid white;
+}
+.white-box:hover {
+  border: 30px solid white;
+  transition: all 0.5s;
+}
+
+.footer {
+  padding-top: 50px;
+  padding-bottom: 30px;
+  text-align: center;
+}
+.footer i {
+  margin: 10px;
+  background: #4e61ce;
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50px;
+  box-sizing: border-box;
+  padding: 14px;
+}
+.footer i:hover {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 992px) {
+  .main-iphone {
+    width: 260px;
+    /* display: block;
+    float: none;
+    margin: auto; */
+    margin-top: 42px;
+    /* position: absolute; */
+    left: 50%;
+    transform: translate(-50%, 0%);
+  }
+  .main-text {
+    /* float: none; */
+    left: 50%;
+    transform: translate(-50%, 0%);
+    margin-top: 50px;
+    text-align: center;
+  }
+  .service-items {
+    display: flex;
+    flex-direction: column;
+  }
+  .service-items div {
+    width: 100%;
+  }
+  .portfolio-item {
+    float: none;
+    width: 100%;
+  }
+}
