@@ -1,0 +1,60 @@
+body {
+  margin: 0;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+.background {
+  background-color: #2a4cb2;
+  font-size: 18px;
+}
+
+.box {
+  color: #eeeeee;
+}
+
+.main-bg {
+  width: 100px;
+}
+.main-bg h4 {
+  font: 16px;
+}
+.main-bg button {
+  color: red;
+}
+
+.btn-blue, .btn-red, .btn-green {
+  width: 100px;
+  height: 100px;
+  padding: 20px;
+}
+
+.btn-green {
+  color: green;
+}
+
+.btn-red {
+  color: red;
+}
+
+.btn-blue {
+  color: blue;
+}
+
+h2 {
+  font-size: 40px;
+  letter-spacing: -1px;
+  color: brown;
+}
+
+h3 {
+  font-size: 30px;
+  letter-spacing: -1px;
+}
+
+h4 {
+  font-size: 20px;
+  letter-spacing: -1px;
+}/*# sourceMappingURL=test.css.map */

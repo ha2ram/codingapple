@@ -1,0 +1,56 @@
+.sh-list {
+  padding: 0;
+  li {
+    list-style: none;
+    padding: 15px;
+    border: 1px solid #eee;
+  }
+  .active {
+    background: royalblue;
+    color: white;
+  }
+  li:hover {
+    background: skyblue;
+    color: white;
+  }
+}
+
+%alert-box {
+  padding: 3px;
+  border-radius: 5px;
+  border: 1px solid #eee;
+}
+
+.alert-box-green {
+  @extend %alert-box;
+  background-color: rgb(205, 255, 205);
+  color: green;
+}
+.alert-box-blue {
+  @extend %alert-box;
+  background-color: rgb(205, 236, 255);
+  color: blue;
+}
+.alert-box-yellow {
+  @extend %alert-box;
+  background-color: rgb(255, 255, 205);
+  color: darkgoldenrod;
+}
+
+div {
+  box-sizing: border-box;
+}
+.row {
+  display: flex;
+}
+@mixin column($width) {
+  width: $width;
+  border: 1px solid #eee;
+  padding: 15px;
+}
+.row .col-6 {
+  @include column(50%);
+}
+.row .col-4 {
+  @include column(100%/3);
+}
