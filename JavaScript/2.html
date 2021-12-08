@@ -7,17 +7,27 @@
   </head>
   <body>
     <div class="alert-box" id="alert">
-      Alert 박스
-      <button onclick="알림창닫기()">닫기</button>
+      <span id="title">Alert 박스</span>
+      <button onclick="알림창열기('none')">X</button>
     </div>
-    <button onclick="알림창열기()">버튼</button>
+    <button onclick="알림창열기('block')">버튼</button>
+
+    <button onclick="알림창('아이디입력하세요')">버튼1</button>
+
+    <button onclick="알림창('비번입력하세요')">버튼2</button>
 
     <script>
-      function 알림창열기() {
-        document.getElementById('alert').style.display = 'block';
+      function 알림창열기(구멍) {
+        document.getElementById('alert').style.display = 구멍;
       }
-      function 알림창닫기() {
-        document.getElementById('alert').style.display = 'none';
+
+      // function 알림창닫기() {
+      //   document.getElementById('alert').style.display = 'none';
+      // }
+
+      function 알림창(구멍) {
+        document.getElementById('title').innerHTML = 구멍;
+        document.getElementById('alert').style.display = 'block';
       }
     </script>
   </body>
