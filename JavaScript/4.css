@@ -2,6 +2,7 @@
   background-image: url(https://cdn.pixabay.com/photo/2016/04/27/20/38/girl-1357485_1280.jpg);
   background-size: cover;
   color: white;
+  border-radius: 0px;
 }
 
 .black-background {
@@ -19,4 +20,15 @@
   margin: 100px auto;
   padding: 20px;
   border-radius: 10px;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  align-items: center;
+}
+
+.nav-sub {
+  display: none;
 }
