@@ -6,11 +6,19 @@
     <link rel="stylesheet" href="2.css" />
   </head>
   <body>
-    <div class="alert-box" id="alert">Alert 박스 <button>닫기</button></div>
-    <button onclick="document.getElementById('alert').style.display='block';">
-      버튼
-    </button>
+    <div class="alert-box" id="alert">
+      Alert 박스
+      <button onclick="알림창닫기()">닫기</button>
+    </div>
+    <button onclick="알림창열기()">버튼</button>
 
-    <script></script>
+    <script>
+      function 알림창열기() {
+        document.getElementById('alert').style.display = 'block';
+      }
+      function 알림창닫기() {
+        document.getElementById('alert').style.display = 'none';
+      }
+    </script>
   </body>
 </html>
