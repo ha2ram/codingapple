@@ -30,6 +30,25 @@
     <div class="black-background">
       <div class="white-background">
         <p>로그인하세요</p>
+        <form action="login.php">
+          <div class="form-group">
+            <input
+              type="email"
+              class="form-control"
+              placeholder="Email"
+              id="email"
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="password"
+              class="form-control"
+              placeholder="Password"
+            />
+          </div>
+          <button type="submit" class="btn btn-primary">전송</button>
+          <button id="close" type="button" class="btn btn-danger">닫기</button>
+        </form>
       </div>
     </div>
 
@@ -55,16 +74,34 @@
         It uses utility classes for typography and spacing to space content out
         within the larger container.
       </p>
-      <a class="btn btn-primary btn-lg" href="#" role="button">Log In</a>
+      <a id="login" class="btn btn-primary btn-lg" href="#" role="button"
+        >Log In</a
+      >
     </div>
 
+    <!-- <input id="test-input" /> -->
+
     <script>
-      $('.btn').on('click', function () {
+      if (1 == 3) {
+        console.log('안녕');
+      } else if (1 == 2) {
+        console.log('안녕2');
+      } else {
+        console.log('반가워');
+      }
+
+      $('#login').on('click', function () {
+        // if ($('#test-input').val() == '안녕') {
         $('.black-background').fadeIn();
+        // }
       });
 
       $('#nav-sub-button').click(function () {
         $('.nav-sub').slideToggle();
+      });
+
+      $('#close').click(function () {
+        $('.black-background').fadeOut();
       });
     </script>
 
