@@ -38,13 +38,16 @@
               placeholder="Email"
               id="email"
             />
+            <p id="email-alert">이메일이 빈칸입니다</p>
           </div>
           <div class="form-group">
             <input
               type="password"
               class="form-control"
               placeholder="Password"
+              id="psw"
             />
+            <p id="psw-alert">비번란이 빈칸입니다</p>
           </div>
           <button type="submit" class="btn btn-primary">전송</button>
           <button id="close" type="button" class="btn btn-danger">닫기</button>
@@ -89,6 +92,24 @@
       } else {
         console.log('반가워');
       }
+
+      $('form').on('submit', function (e) {
+        if ($('#email').val() == '') {
+          e.preventDefault();
+          $('#email-alert').show();
+        } else if ($('#psw').val() == '') {
+          e.preventDefault();
+          $('#psw-alert').show();
+        }
+      });
+
+      // $('#email').on('change', function () {
+      //   $('#email-alert').show();
+      // });
+
+      // $('#email').on('input', function () {
+      //   $('#email-alert').show();
+      // });
 
       $('#login').on('click', function () {
         // if ($('#test-input').val() == '안녕') {
