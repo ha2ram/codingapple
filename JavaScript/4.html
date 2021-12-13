@@ -55,6 +55,10 @@
       </div>
     </div>
 
+    <div class="left-menu">
+      <p>Menu Title</p>
+    </div>
+
     <div class="nav-menu">
       <h4 style="margin: 0">Shirts Studio</h4>
       <a id="nav-sub-button">Products</a>
@@ -80,9 +84,14 @@
       <a id="login" class="btn btn-primary btn-lg" href="#" role="button"
         >Log In</a
       >
+      <a id="show-menu" class="btn btn-danger btn-lg" role="button"
+        >Show Menu</a
+      >
     </div>
 
     <!-- <input id="test-input" /> -->
+
+    <!-- <h3 id="hi">안녕</h3> -->
 
     <script>
       if (1 == 3) {
@@ -123,6 +132,14 @@
 
       $('#close').click(function () {
         $('.black-background').fadeOut();
+      });
+
+      // $('#hi').click(function () {
+      //   $('#hi').animate({ marginTop: '100px', marginLeft: '100px' }, 1000);
+      // });
+
+      $('#show-menu').click(function () {
+        $('.left-menu').animate({ marginLeft: '0px' });
       });
     </script>
 
