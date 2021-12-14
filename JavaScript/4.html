@@ -120,11 +120,11 @@
       //   $('#email-alert').show();
       // });
 
-      $('#login').on('click', function () {
-        // if ($('#test-input').val() == '안녕') {
-        $('.black-background').fadeIn();
-        // }
-      });
+      // $('#login').on('click', function () {
+      //   // if ($('#test-input').val() == '안녕') {
+      //   $('.black-background').fadeIn();
+      //   // }
+      // });
 
       $('#nav-sub-button').click(function () {
         $('.nav-sub').slideToggle();
@@ -140,6 +140,15 @@
 
       $('#show-menu').click(function () {
         $('.left-menu').animate({ marginLeft: '0px' });
+      });
+
+      // $('#login').on('click', function () {
+      //   $('.black-background').show().animate({ marginTop: '0px' }, 1000);
+      // });
+
+      $('#login').on('click', function () {
+        // $('.black-background').css('transform', 'translateY(0px)');
+        $('.black-background').addClass('slide-down');
       });
     </script>
 
