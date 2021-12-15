@@ -102,15 +102,25 @@
         console.log('반가워');
       }
 
+      var 이메일안내창 = $('#email-alert');
+
+      var 입력한이메일 = $('#email').val();
+
       $('form').on('submit', function (e) {
-        if ($('#email').val() == '') {
-          e.preventDefault();
-          $('#email-alert').show();
-        } else if ($('#psw').val() == '') {
-          e.preventDefault();
-          $('#psw-alert').show();
+        if (/\S+@\S+\.\S+/.test(입력한이메일) == false) {
         }
       });
+
+      // $('form').on('submit', function (e) {
+      //   if ($('#email').val() == '') {
+      //     e.preventDefault();
+      //     이메일안내창.show();
+
+      //   } else if ($('#psw').val() == '') {
+      //     e.preventDefault();
+      //     $('#psw-alert').show();
+      //   }
+      // });
 
       // $('#email').on('change', function () {
       //   $('#email-alert').show();
