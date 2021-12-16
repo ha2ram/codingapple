@@ -104,10 +104,17 @@
 
       var 이메일안내창 = $('#email-alert');
 
-      var 입력한이메일 = $('#email').val();
-
       $('form').on('submit', function (e) {
+        var 입력한이메일 = $('#email').val();
         if (/\S+@\S+\.\S+/.test(입력한이메일) == false) {
+          e.preventDefault();
+        } else if (입력한이메일 == '') {
+          e.preventDefault;
+        }
+
+        var 입력한패스워드 = $('#psw').val();
+        if (/[A-Z]+/.test(입력한패스워드) == false) {
+          e.preventDefault();
         }
       });
 
