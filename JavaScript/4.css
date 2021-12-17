@@ -30,6 +30,25 @@
   justify-content: space-between;
   padding: 15px;
   align-items: center;
+  background-color: transparent;
+  position: fixed;
+  z-index: 5;
+  width: 100%;
+  color: white;
+}
+
+.nav-black {
+  background: white;
+  color: black;
+}
+
+.large-logo {
+  font-size: 30px;
+  transition: all 0.5s;
+}
+
+.small-logo {
+  font-size: 22px;
 }
 
 .nav-sub {
