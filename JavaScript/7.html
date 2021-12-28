@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array, Object</title>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <h4 id="title">상품제목</h4>
+    <p id="text">상품내용</p>
+    <div></div>
+    <div style="margin-bottom: 500px"></div>
+
+    <script>
+      // Array, Object
+      var 어레이 = ['BMW', 520];
+
+      var 오브젝트 = { brand: 'BMW', model: 520 };
+
+      var 자료 = [{ brand: 'BMW' }, { model: 520 }];
+
+      document.getElementById('title').innerHTML = 어레이[0];
+      $('#title').html(어레이[0]);
+      $('#text').html(오브젝트.model);
+      $('#text').html(자료[1].model);
+    </script>
+  </body>
+</html>
