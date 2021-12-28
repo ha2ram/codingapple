@@ -183,6 +183,14 @@
           $('.nav-menu h4').removeClass('small-logo');
         }
       });
+
+      // 이벤트 버블링
+      $('.black-background').click(function (e) {
+        // if (e.target == e.currentTarget) {
+        if (e.target == this) {
+          $('.black-background').hide();
+        }
+      });
     </script>
 
     <script
