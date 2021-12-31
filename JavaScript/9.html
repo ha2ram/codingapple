@@ -28,7 +28,7 @@
   </head>
   <body>
     <div class="card-group container">
-      <div class="card">
+      <!-- <div class="card">
         <img src="https://via.placeholder.com/600" />
         <div class="card-body">
           <h5 class="title">Card title</h5>
@@ -51,7 +51,15 @@
           <p class="price">가격 : 70000</p>
           <button class="btn btn-danger">주문하기</button>
         </div>
-      </div>
+      </div> -->
+    </div>
+
+    <div class="container my-4">
+      <button class="btn btn-danger" id="sortPrice">가격순정렬</button>
+
+      <button class="btn btn-primary" id="abc">가나다순</button>
+
+      <button class="btn btn-primary" id="filter">6만원이하</button>
     </div>
 
     <script>
@@ -75,6 +83,79 @@
       $('.price')
         .eq(2)
         .html('가격 : ' + products[2].price);
+
+      var 어레이 = [7, 3, 5, 2, 40];
+
+      // 어레이.sort(function (a, b) {
+      //   return a - b;
+      //   return b - a;
+      // });
+
+      // var 뉴어레이 = 어레이.filter(function (a) {
+      //   return a < 4;
+      // });
+
+      // var 뉴어레이 = 어레이.map(function (a) {
+      //   return a * 2;
+      // });
+
+      $('#sortPrice').click(function () {
+        products.sort(function (a, b) {
+          return a.price - b.price;
+        });
+
+        for (var i = 0; i < products.length; i++) {
+          $('.title').eq(i).html(products[i].title);
+          $('.price').eq(i).html(products[i].price);
+        }
+      });
+
+      $('#abc').click(function () {
+        products.sort(function (a, b) {
+          if (a.title < b.title == true) {
+            return -1;
+          } else {
+            return 1;
+          }
+        });
+
+        for (var i = 0; i < products.length; i++) {
+          $('.title').eq(i).html(products[i].title);
+          $('.price').eq(i).html(products[i].price);
+        }
+      });
+
+      $('#filter').click(function () {
+        var 새상품 = products.filter(function (a) {
+          return a.price <= 60000;
+        });
+
+        $('.card-group').html('');
+
+        새상품.forEach(function (a) {
+          var template = `<div class="card">
+              <img src="https://via.placeholder.com/600" />
+              <div class="card-body">
+                <h5 class="title">${a.title}</h5>
+                <p class="price">가격 : ${a.price}</p>
+                <button class="btn btn-danger">주문하기</button>
+              </div>
+            </div>`;
+          $('.card-group').append(template);
+        });
+      });
+
+      products.forEach(function (a) {
+        var template = `<div class="card">
+              <img src="https://via.placeholder.com/600" />
+              <div class="card-body">
+                <h5 class="title">${a.title}</h5>
+                <p class="price">가격 : ${a.price}</p>
+                <button class="btn btn-danger">주문하기</button>
+              </div>
+            </div>`;
+        $('.card-group').append(template);
+      });
     </script>
 
     <script
