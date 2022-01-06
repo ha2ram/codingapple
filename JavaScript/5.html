@@ -55,6 +55,38 @@
     <button class="slide-2">2</button>
     <button class="slide-3">3</button>
 
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"
+      integrity="sha256-eVNjHw5UeU0jUqPPpZHAkU1z4U+QFBBY488WvueTm88="
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      var 이미지1 = document.querySelectorAll('.slide-box img')[0];
+
+      var 매니저 = new Hammer.Manager(이미지1);
+      매니저.add(new Hammer.Pan({ threshold: 0 }));
+
+      매니저.on('pan', function (e) {
+        console.log(e.deltaX);
+
+        if (e.deltaX < -1) {
+          $('.slide-container').css(
+            'transform',
+            'translateX(' + e.deltaX + 'px)'
+          );
+
+          if (e.isFinal && 지금보이는사진 == 1) {
+            $('.slide-container').addClass('transforming');
+            $('.slide-container').css('transform', 'translateX(-100vw)');
+            setTimeout(function () {
+              $('.slide-container').removeClass('transforming');
+            }, 500);
+          }
+        }
+      });
+    </script>
+
     <script>
       $('.slide-1').click(function () {
         $('.slide-container').css('transform', 'translateX(0)');
