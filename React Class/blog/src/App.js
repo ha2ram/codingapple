@@ -13,6 +13,8 @@ function App() {
 
   let [따봉, 따봉변경] = useState(0);
 
+  let [modal, modal변경] = useState(false);
+
   let posts = '강남 고기 맛집';
 
   function 제목바꾸기() {
@@ -48,12 +50,18 @@ function App() {
         <hr></hr>
       </div>
       <div className="list">
-        <h3> {글제목[2]} </h3>
+        <h3
+          onClick={() => {
+            modal변경(true);
+          }}
+        >
+          {글제목[2]}
+        </h3>
         <p>2월 19일 발행</p>
         <hr></hr>
       </div>
 
-      <Modal />
+      {modal === true ? <Modal /> : null}
     </div>
   );
 }
