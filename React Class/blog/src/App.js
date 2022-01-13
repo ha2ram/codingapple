@@ -50,16 +50,12 @@ function App() {
         <hr></hr>
       </div>
       <div className="list">
-        <h3
-          onClick={() => {
-            modal변경(true);
-          }}
-        >
-          {글제목[2]}
-        </h3>
+        <h3>{글제목[2]}</h3>
         <p>2월 19일 발행</p>
         <hr></hr>
       </div>
+
+      <button onClick={() => modal변경(!modal)}>버튼</button>
 
       {modal === true ? <Modal /> : null}
     </div>
