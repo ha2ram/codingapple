@@ -15,6 +15,22 @@ function App() {
 
   let [modal, modal변경] = useState(false);
 
+  var 어레이 = [2, 3, 4];
+
+  var 뉴어레이 = 어레이.map(function (a) {
+    return a * 2;
+  });
+
+  function 반복된UI() {
+    var 어레이 = [];
+
+    for (var i = 0; i < 3; i++) {
+      어레이.push(<div>안녕</div>);
+    }
+
+    return 어레이;
+  }
+
   let posts = '강남 고기 맛집';
 
   function 제목바꾸기() {
@@ -56,6 +72,28 @@ function App() {
       </div>
 
       <button onClick={() => modal변경(!modal)}>버튼</button>
+
+      {반복된UI()}
+
+      {글제목.map(function (글) {
+        return (
+          <div className="list">
+            <h3>
+              {글}
+              <span
+                onClick={() => {
+                  따봉변경(따봉 + 1);
+                }}
+              >
+                👍
+              </span>
+              {따봉}
+            </h3>
+            <p>2월 18일 발행</p>
+            <hr></hr>
+          </div>
+        );
+      })}
 
       {modal === true ? <Modal /> : null}
     </div>
