@@ -14,6 +14,8 @@ function App() {
   let [modal, modal변경] = useState(false);
   let [누른제목, 누른제목변경] = useState(0);
 
+  let [입력값, 입력값변경] = useState('');
+
   var 어레이 = [2, 3, 4];
 
   var 뉴어레이 = 어레이.map(function (a) {
@@ -74,7 +76,7 @@ function App() {
 
       {글제목.map(function (글, i) {
         return (
-          <div className="list">
+          <div className="list" key={i}>
             <h3
               onClick={() => {
                 누른제목변경(i);
@@ -96,27 +98,29 @@ function App() {
         );
       })}
 
-      <button
-        onClick={() => {
-          누른제목변경(0);
+      {/* {입력값}
+      <input
+        onChange={(e) => {
+          입력값변경(e.target.value);
         }}
-      >
-        버튼1
-      </button>
-      <button
-        onClick={() => {
-          누른제목변경(1);
-        }}
-      >
-        버튼2
-      </button>
-      <button
-        onClick={() => {
-          누른제목변경(2);
-        }}
-      >
-        버튼3
-      </button>
+      /> */}
+
+      <div className="publish">
+        <input
+          onChange={(e) => {
+            입력값변경(e.target.value);
+          }}
+        />
+        <button
+          onClick={() => {
+            var arrayCopy = [...글제목];
+            arrayCopy.unshift(입력값);
+            글제목변경(arrayCopy);
+          }}
+        >
+          저장
+        </button>
+      </div>
 
       <button onClick={() => modal변경(!modal)}>열고닫기</button>
 
