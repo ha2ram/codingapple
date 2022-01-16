@@ -71,9 +71,7 @@ function App() {
         <hr></hr>
       </div>
 
-      <button onClick={() => modal변경(!modal)}>버튼</button>
-
-      {반복된UI()}
+      {/* {반복된UI()} */}
 
       {글제목.map(function (글) {
         return (
@@ -95,15 +93,17 @@ function App() {
         );
       })}
 
-      {modal === true ? <Modal /> : null}
+      <button onClick={() => modal변경(!modal)}>열고닫기</button>
+
+      {modal === true ? <Modal 글제목={글제목} /> : null}
     </div>
   );
 }
 
-function Modal() {
+function Modal(props) {
   return (
     <div className="modal">
-      <h2>제목</h2>
+      <h2> {props.글제목[1]} </h2>
       <p>날짜</p>
       <p>상세내용</p>
     </div>
