@@ -122,6 +122,8 @@ function App() {
         </button>
       </div>
 
+      <Profile />
+
       <button onClick={() => modal변경(!modal)}>열고닫기</button>
 
       {modal === true ? <Modal 글제목={글제목} 누른제목={누른제목} /> : null}
@@ -137,6 +139,27 @@ function Modal(props) {
       <p>상세내용</p>
     </div>
   );
+}
+
+class Profile extends React.Component {
+  constructor() {
+    super();
+    this.state = { name: 'Kim', age: 30 };
+  }
+
+  chaneName = () => {
+    this.setState({ name: 'Park' });
+  };
+
+  render() {
+    return (
+      <div>
+        <h3>프로필입니다</h3>
+        <p>저는 {this.state.name} 입니다.</p>
+        <button onClick={this.chaneName}>버튼</button>
+      </div>
+    );
+  }
 }
 
 export default App;
