@@ -5,6 +5,7 @@ import { Navbar, Container, Nav, NavDropdown, Button } from 'react-bootstrap';
 import './App.css';
 import Data from './data.js';
 import Detail from './Detail.js';
+import axios from 'axios';
 
 import { Link, Route, Switch } from 'react-router-dom';
 
@@ -62,6 +63,24 @@ function App() {
                 return <Card shoes={shoes[i]} i={i} key={i} />;
               })}
             </div>
+            <button
+              className="btn btn-primary"
+              onClick={() => {
+                // axios.post('서버URL', { id: '', pw: 1234 });
+
+                axios
+                  .get('https://codingapple1.github.io/shop/data2.json')
+                  .then((result) => {
+                    console.log(result.data);
+                    shoes변경([...shoes, ...result.data]);
+                  })
+                  .catch(() => {
+                    console.log('실패했어요');
+                  });
+              }}
+            >
+              더보기
+            </button>
           </div>
         </Route>
 
