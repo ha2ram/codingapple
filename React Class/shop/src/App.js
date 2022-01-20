@@ -1,16 +1,18 @@
 /* eslint-disable */
 
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Navbar, Container, Nav, NavDropdown, Button } from 'react-bootstrap';
 import './App.css';
 import Data from './data.js';
 import Detail from './Detail.js';
 import axios from 'axios';
-
 import { Link, Route, Switch } from 'react-router-dom';
+
+export let 재고context = React.createContext();
 
 function App() {
   let [shoes, shoes변경] = useState(Data);
+  let [재고, 재고변경] = useState([10, 11, 12]);
 
   return (
     <div className="App">
@@ -58,11 +60,14 @@ function App() {
           </div>
 
           <div className="container">
-            <div className="row">
-              {shoes.map((a, i) => {
-                return <Card shoes={shoes[i]} i={i} key={i} />;
-              })}
-            </div>
+            <재고context.Provider value={재고}>
+              <div className="row">
+                {shoes.map((a, i) => {
+                  return <Card shoes={shoes[i]} i={i} key={i} />;
+                })}
+              </div>
+            </재고context.Provider>
+
             <button
               className="btn btn-primary"
               onClick={() => {
@@ -85,7 +90,9 @@ function App() {
         </Route>
 
         <Route path="/detail/:id">
-          <Detail shoes={shoes} />
+          <재고context.Provider value={재고}>
+            <Detail shoes={shoes} 재고={재고} 재고변경={재고변경} />
+          </재고context.Provider>
         </Route>
 
         <Route path="/:id">
@@ -97,6 +104,8 @@ function App() {
 }
 
 function Card(props) {
+  let 재고 = useContext(재고context);
+
   return (
     <div className="col-md-4">
       <img
@@ -110,6 +119,7 @@ function Card(props) {
       <p>
         {props.shoes.content} & {props.shoes.price}
       </p>
+      {재고[props.i]}
     </div>
   );
 }
