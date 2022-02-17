@@ -32,7 +32,7 @@ function Cart(props) {
                       // props.dispatch({
                       dispatch({
                         type: '수량증가',
-                        payload: { name: 'kim' },
+                        데이터: a.id,
                       });
                     }}
                   >
@@ -41,7 +41,7 @@ function Cart(props) {
                   <button
                     onClick={() => {
                       // props.dispatch({ type: '수량감소' });
-                      dispatch({ type: '수량감소' });
+                      dispatch({ type: '수량감소', 데이터: a.id });
                     }}
                   >
                     -
